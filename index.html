@@ -38,6 +38,14 @@
     html {
       scroll-behavior: smooth;
     }
+    /* Hide horizontal scrollbar on mobile nav */
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+    nav {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -212,13 +220,13 @@
       <h1>Daniel Rivera</h1>
       <div class="tagline">Clinical Diagnostics, Data Analytics & Epidemiology</div>
       <p class="bio">
-        <nav style="display: flex; gap: 1.25rem; margin-top: 1.5rem; font-size: 1.05rem; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
-        <a href="#experience" style="color: var(--text-muted); text-decoration: none;">Experience</a>
-        <a href="#competencies" style="color: var(--text-muted); text-decoration: none;">Competencies</a>
-        <a href="#research" style="color: var(--text-muted); text-decoration: none;">Research</a>
-        <a href="#education" style="color: var(--text-muted); text-decoration: none;">Education</a>
-        <a href="#notes" style="color: var(--text-muted); text-decoration: none;">Field Notes</a>
-      </nav>
+        <nav style="display: flex; justify-content: space-between; margin-top: 1.5rem; font-size: 1rem;">
+          <a href="#experience" style="color: var(--text-muted); text-decoration: none;">Experience</a>
+          <a href="#competencies" style="color: var(--text-muted); text-decoration: none;">Skills</a>
+          <a href="#research" style="color: var(--text-muted); text-decoration: none;">Research</a>
+          <a href="#education" style="color: var(--text-muted); text-decoration: none;">Education</a>
+          <a href="#notes" style="color: var(--text-muted); text-decoration: none;">Notes</a>
+        </nav>
         Medical Laboratory Science graduate student with a foundation in epidemiology, biostatistics, and diagnostic bench methodology. Actively building expertise in hematopathology and the cellular principles of multi-color flow cytometry, with a long-term focus on translational oncology and cancer diagnostics.
       </p>
       <div class="links">
