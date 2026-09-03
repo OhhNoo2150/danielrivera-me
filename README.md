@@ -1,2 +1,2 @@
 # danielrivera-me
-buildout of professional site
+build out of professional site
