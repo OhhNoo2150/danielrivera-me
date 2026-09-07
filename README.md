@@ -21,6 +21,6 @@ The source code and static assets powering my personal website and portfolio at 
 ├── README.md        # Project documentation
 └── index.html       # Landing page entry point
 
-// **Key rules for this README:**
+ **Key rules for this README:**
 * **Keep the CNAME note:** Reminding yourself (or collaborators) not to delete `CNAME` in the structure section prevents accidental DNS breaks later.
-* **Keep it updated if you switch stacks:** If you eventually build the site using Tailwind, Astro, or a build pipeline, just swap the "Built With" and "Local Development" commands to reflect `npm install` and `npm run dev`. //
+* **Keep it updated if you switch stacks:** If you eventually build the site using Tailwind, Astro, or a build pipeline, just swap the "Built With" and "Local Development" commands to reflect `npm install` and `npm run dev`. 
