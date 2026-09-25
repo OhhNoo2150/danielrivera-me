@@ -85,6 +85,15 @@
       color: var(--text-main);
     }
 
+    .profile-photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it a clean circle; change to 8px for soft square corners */
+  border: 1px solid var(--card-border);
+  display: block;    
+  margin-bottom: 1.5rem;
+}
     .tagline {
       font-size: 1.35rem;
       font-style: italic;
@@ -242,12 +251,13 @@
 
     <!-- Header / Intro -->
     <header>
+      <img src="portrait.jpg" alt="Daniel Rivera" class="profile-photo">
       <h1>Daniel Rivera</h1>
       <div class="tagline">Clinical Diagnostics, Data Analytics &amp; Epidemiology</div>
       <p class="bio">
         Medical Laboratory Science graduate student with a foundation in epidemiology, biostatistics, and diagnostic bench methodology. Actively building expertise in hematopathology and the cellular principles of multi-color flow cytometry, with a focus on advanced cellular diagnostics.
       </p>
-
+      
       <div class="links">
         <a href="https://github.com/OhhNoo2150" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/danielrivera" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
