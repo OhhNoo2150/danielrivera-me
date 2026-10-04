@@ -90,14 +90,15 @@
     }
 
     .profile-photo {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 50%; /* Makes it a clean circle; change to 8px for soft square corners */
-  border: 1px solid var(--card-border);
-  display: block;    
-  margin-bottom: 1.5rem;
-}
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%; /* Makes it a clean circle; change to 8px for soft square corners */
+      border: 1px solid var(--card-border);
+      display: block;    
+      margin-bottom: 1.5rem;
+    }
+
     .tagline {
       font-size: 1.35rem;
       font-style: italic;
@@ -228,7 +229,7 @@
       border-radius: 4px;
     }
 
-    /* Blog / Notes Section */
+    /* Blog / Notes Section & Carousel */
     .post-link {
       text-decoration: none;
       display: block;
@@ -239,6 +240,51 @@
       border-color: var(--accent);
     }
 
+    .carousel-track {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+      padding-top: 0.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--card-border) transparent;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .carousel-track::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      background: var(--card-border);
+      border-radius: 3px;
+    }
+
+    .carousel-card {
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      display: flex;
+    }
+
+    .carousel-card .card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-card {
+        flex: 0 0 85%;
+      }
+    }
+
     footer {
       text-align: center;
       padding-top: 2.5rem;
@@ -247,7 +293,7 @@
       font-size: 1rem;
       font-style: italic;
     }
-  </style>
+</style>
 </head>
 <body>
 
@@ -477,74 +523,77 @@
 
     <!-- Writing & Field Notes -->
     <section id="notes">
-      <h2>Writing &amp; Field Notes</h2>
-      <a href="https://www.medel.com/hearing-solutions/cochlear-implants?utm_source=www.good-news.io&utm_medium=newsletter&utm_campaign=world-s-first-fully-implanted-cochlear-implant-is-here" target="_blank" rel="noopener noreferrer" class="post-link">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">World’s First Fully Implanted Cochlear Implant Is Here</div>
-            <div class="card-meta">Notes &amp; Analysis ↗</div>
-          </div>
-          <div class="card-body">
-            A cochlear implant is a hearing solution designed to help people with severe-to-profound hearing loss access sound. Unlike a hearing aid, which amplifies sound, a cochlear implant works by bypassing damage in the inner ear.
-          </div>
-          <div class="badges">
-            <span class="badge">Implant</span>
-            <span class="badge">Medical Devices</span>
-            <span class="badge">Hearing</span>
-          </div>
+  <h2>Writing &amp; Field Notes</h2>
+  <div class="carousel-track">
+    <a href="https://www.medel.com/hearing-solutions/cochlear-implants?utm_source=www.good-news.io&utm_medium=newsletter&utm_campaign=world-s-first-fully-implanted-cochlear-implant-is-here" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">World’s First Fully Implanted Cochlear Implant Is Here</div>
+          <div class="card-meta">Notes &amp; Analysis ↗</div>
         </div>
-      </a>
-      <a href="https://www.acs.org/pressroom/headline-science/universal-flu-vaccine.html" target="_blank" rel="noopener noreferrer" class="post-link">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Engineering Broad Protection: The Hunt for a Universal Influenza Vaccine</div>
-            <div class="card-meta">Notes &amp; Analysis ↗</div>
-          </div>
-          <div class="card-body">
-            Examining novel nanoparticle antigen presentations that bypass seasonal antigenic drift by targeting conserved viral stem epitopes rather than hypervariable head regions.
-          </div>
-          <div class="badges">
-            <span class="badge">Immunology</span>
-            <span class="badge">Vaccinology</span>
-            <span class="badge">Viral Evolution</span>
-          </div>
+        <div class="card-body">
+          A cochlear implant is a hearing solution designed to help people with severe-to-profound hearing loss access sound. Unlike a hearing aid, which amplifies sound, a cochlear implant works by bypassing damage in the inner ear.
         </div>
-      </a>
+        <div class="badges">
+          <span class="badge">Implant</span>
+          <span class="badge">Medical Devices</span>
+          <span class="badge">Hearing</span>
+        </div>
+      </div>
+    </a>
 
-      <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener noreferrer" class="post-link">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Field Epidemiology &amp; Biosafety in Acute Filovirus Outbreaks</div>
-            <div class="card-meta">Field Notes ↗</div>
-          </div>
-          <div class="card-body">
-            A look at decentralized diagnostic containment, point-of-care RT-PCR workflows, and rapid epidemiological surveillance metrics during recurring hemorrhagic fever outbreaks in the DRC.
-          </div>
-          <div class="badges">
-            <span class="badge">Epidemiology</span>
-            <span class="badge">Outbreak Surveillance</span>
-            <span class="badge">Diagnostic Containment</span>
-          </div>
+    <a href="https://www.acs.org/pressroom/headline-science/universal-flu-vaccine.html" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Engineering Broad Protection: The Hunt for a Universal Influenza Vaccine</div>
+          <div class="card-meta">Notes &amp; Analysis ↗</div>
         </div>
-      </a>
+        <div class="card-body">
+          Examining novel nanoparticle antigen presentations that bypass seasonal antigenic drift by targeting conserved viral stem epitopes rather than hypervariable head regions.
+        </div>
+        <div class="badges">
+          <span class="badge">Immunology</span>
+          <span class="badge">Vaccinology</span>
+          <span class="badge">Viral Evolution</span>
+        </div>
+      </div>
+    </a>
 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/39722614/" target="_blank" rel="noopener noreferrer" class="post-link">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Cellular Biomarkers &amp; Clinical Oncology: Deconstructing Diagnostic Targets</div>
-            <div class="card-meta">Literature Review ↗</div>
-          </div>
-          <div class="card-body">
-            Analytical breakdown of emerging therapeutic targets and cellular mechanisms evaluated in recent clinical oncology literature, focusing on biomarker assay sensitivity and clinical validation.
-          </div>
-          <div class="badges">
-            <span class="badge">Clinical Oncology</span>
-            <span class="badge">Biomarkers</span>
-            <span class="badge">Translational Research</span>
-          </div>
+    <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Field Epidemiology &amp; Biosafety in Acute Filovirus Outbreaks</div>
+          <div class="card-meta">Field Notes ↗</div>
         </div>
-      </a>
-    </section>
+        <div class="card-body">
+          A look at decentralized diagnostic containment, point-of-care RT-PCR workflows, and rapid epidemiological surveillance metrics during recurring hemorrhagic fever outbreaks in the DRC.
+        </div>
+        <div class="badges">
+          <span class="badge">Epidemiology</span>
+          <span class="badge">Outbreak Surveillance</span>
+          <span class="badge">Diagnostic Containment</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://pubmed.ncbi.nlm.nih.gov/39722614/" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Cellular Biomarkers &amp; Clinical Oncology: Deconstructing Diagnostic Targets</div>
+          <div class="card-meta">Literature Review ↗</div>
+        </div>
+        <div class="card-body">
+          Analytical breakdown of emerging therapeutic targets and cellular mechanisms evaluated in recent clinical oncology literature, focusing on biomarker assay sensitivity and clinical validation.
+        </div>
+        <div class="badges">
+          <span class="badge">Clinical Oncology</span>
+          <span class="badge">Biomarkers</span>
+          <span class="badge">Translational Research</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
 
     <footer>
       © 2026 Daniel Rivera • Hosted on GitHub Pages
