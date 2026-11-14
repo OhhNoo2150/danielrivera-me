@@ -90,4 +90,561 @@
     }
 
     .profile-photo {
-      width: 110px
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--card-border);
+      display: block;    
+      margin-bottom: 1.5rem;
+    }
+
+    .tagline {
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--accent);
+      margin-top: 0.35rem;
+    }
+
+    .bio {
+      margin-top: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+
+    .links a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Clean Flex Navigation */
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--card-border);
+    }
+
+    .section-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .section-nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 0.35rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      border-color: #475569;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .card-meta {
+      font-size: 1rem;
+      font-style: italic;
+      color: #94a3b8;
+    }
+
+    .card-body {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      font-size: 0.95rem;
+      font-style: italic;
+      padding: 0.15rem 0.65rem;
+      border-radius: 4px;
+    }
+
+    /* Blog / Notes Section & Carousel */
+    .post-link {
+      text-decoration: none;
+      display: block;
+    }
+
+    .post-link:hover .card {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+      padding-top: 0.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--card-border) transparent;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .carousel-track::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      background: var(--card-border);
+      border-radius: 3px;
+    }
+
+    .carousel-card {
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      display: flex;
+    }
+
+    .carousel-card .card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-card {
+        flex: 0 0 85%;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--card-border);
+      color: #64748b;
+      font-size: 1rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header / Intro -->
+    <header>
+      <img src="portrait.jpg" alt="Daniel Rivera" class="profile-photo">
+      <h1>Daniel Rivera</h1>
+      <div class="tagline">Clinical Diagnostics, Data Analytics & Epidemiology</div>
+      <p class="bio">
+        Medical Laboratory Science graduate student with a foundation in epidemiology, biostatistics, and diagnostic bench methodology. Actively building expertise in hematopathology and the cellular principles of multi-color flow cytometry, with a focus on advanced cellular diagnostics.
+      </p>
+      
+      <div class="links">
+        <a href="https://github.com/OhhNoo2150" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/danielrivera" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="mailto:Daniel.I.Rivera@pm.me">Email Me</a>
+        <a href="Rivera_Daniel_Resume.pdf" target="_blank" download>Download Resume (PDF) ↓</a>
+      </div>
+
+      <!-- Jump Navigation -->
+      <nav class="section-nav">
+        <a href="#experience">Experience</a>
+        <a href="#competencies">Competencies</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#affiliations">Affiliations</a>
+        <a href="#notes">Field Notes</a>
+      </nav>
+    </header>
+
+    <!-- Experience / Background -->
+    <section id="experience">
+      <h2>Clinical & Diagnostic Experience</h2>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Clinical Laboratory Science Intern (MS-MLS Practicum)</div>
+          <div class="card-meta">Nov 2026 — Aug 2027</div>
+        </div>
+        <div class="card-meta" style="margin-bottom: 0.85rem;">
+          Audie Murphy VA Medical Center (South Texas Veterans Health Care System) — San Antonio, TX
+        </div>
+        <div class="card-body">
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.65rem;">
+            <li>
+              <strong style="color: var(--text-main);">Urinalysis & Body Fluids (Nov – Dec 2026):</strong> Executed ~1,000 routine urinalysis and urine chemistry panels (including reflex culture routing), ~60 STATs, and ~28+ manual microscopic sediment differentials using <strong style="color: var(--text-main);">Siemens Clinitek Novus</strong> (reflectance photometry) and <strong style="color: var(--text-main);">Sysmex UF-5000</strong> (fluorescence flow cytometry) analyzers.
+            </li>
+            <li>
+              <strong style="color: var(--text-main);">Clinical Osmometry & Quality Control:</strong> Performed 14 serum, plasma, and urine osmolality assays alongside independent daily calibration verification and multi-level QC on an <strong style="color: var(--text-main);">Advanced Instruments OsmoPRO</strong> micro-osmometer using <strong style="color: var(--text-main);">Clinitrol 290</strong> reference standards.
+            </li>
+            <li>
+              <strong style="color: var(--text-main);">Specialized Collections & Pre-Analytical Triage:</strong> Processed 6 end-to-end 24-hour timed urine collections (including 3 <strong style="color: var(--text-main);">UroRisk</strong> stone-risk profiles), 4 post-vasectomy semen screens with commercial QC, and ~700+ core laboratory specimen accessions (~90 Microbiology C&S referrals) under CAP/CLIA/VA PALMS standards.
+            </li>
+            <li>
+              <strong style="color: var(--text-main);">Upcoming Rotations:</strong> Clinical Chemistry, Hematology & Hemostasis, Flow Cytometry, Diagnostic Microbiology, and Immunohematology (Blood Bank).
+            </li>
+          </ul>
+        </div>
+        <div class="badges">
+          <span class="badge">Siemens Clinitek Novus</span>
+          <span class="badge">Sysmex UF-5000</span>
+          <span class="badge">OsmoPRO</span>
+          <span class="badge">CAP / CLIA / PALMS</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Academic Clinical Laboratory Experience — UT San Antonio Teaching Laboratories</div>
+          <div class="card-meta">August 2025 — August 2026</div>
+        </div>
+        <div class="card-body">
+          Hands-on diagnostic methodology, automated instrumentation, and discrepancy resolution across core clinical laboratory disciplines:
+          <ul style="margin: 0.5rem 0 0 1.25rem; color: var(--text-muted); font-size: 1.05rem;">
+            <li><strong>Hematology & Hemostasis:</strong> Operated HORIBA ABX Micros CBC and automated coagulation analyzers; conducted manual 100-cell differentials, morphologic evaluations for acute leukemias, reticulocyte counts, and ESR.</li>
+            <li><strong>Immunohematology / Blood Bank:</strong> Executed tube, solid phase (Werfen SPRCA/Capture), and Ortho MTS Anti-IgG gel card methods for ABO/Rh typing, discrepancy resolution, antibody identification panels, crossmatching, and fetal screens.</li>
+            <li><strong>Clinical Chemistry:</strong> Operated ACE Axcel (ISE module) and Sebia SPEP systems; evaluated Westgard multi-rules and resolved out-of-control runs.</li>
+            <li><strong>Diagnostic Microbiology & Mycology:</strong> Plated cultures, performed Gram/AFB stains, automated VITEK ID/AST, Kirby-Bauer susceptibility, and identified anaerobic bacteria, fungi, and parasites.</li>
+            <li><strong>Urinalysis & Body Fluids:</strong> Conducted macroscopic and automated urinalysis (Siemens Clinitek), microscopic sediment review, and cytological evaluation of synovial, pleural, and CSF specimens.</li>
+          </ul>
+        </div>
+        <div class="badges">
+          <span class="badge">Hematopathology</span>
+          <span class="badge">Immunohematology</span>
+          <span class="badge">Westgard QC</span>
+          <span class="badge">VITEK ID/AST</span>
+          <span class="badge">Body Fluid Cytology</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Sleep Lab Technician (Polysomnograph) — San Antonio Sleep Centers</div>
+          <div class="card-meta">February 2008 — January 2011</div>
+        </div>
+        <div class="card-body">
+          Administered solo overnight clinical diagnostic testing. Calibrated multi-channel physiological montages (EEG, EKG, EMG, EOG), monitored live data streams for real-time respiratory and cardiac anomalies, and synthesized diagnostic clinical reports for physician review.
+        </div>
+        <div class="badges">
+          <span class="badge">Electrophysiological Telemetry</span>
+          <span class="badge">Diagnostic Reporting</span>
+          <span class="badge">Clinical Protocol</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Administrative Clerk & Chief Mail Coordinator — United States Marine Corps</div>
+          <div class="card-meta">October 1999 — October 2003</div>
+        </div>
+        <div class="card-body">
+          Generated daily personnel readiness and accountability reports for a 900+ Marine unit at Camp Pendleton. Managed secure distribution logistics serving 800+ personnel, processed command awards, and directed rear-detachment operational support during combat deployments.
+        </div>
+        <div class="badges">
+          <span class="badge">Operational Logistics</span>
+          <span class="badge">Personnel Readiness</span>
+          <span class="badge">Data Integrity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical & Laboratory Competencies -->
+    <section id="competencies">
+      <h2>Technical & Laboratory Competencies</h2>
+      <div class="card">
+        <div class="card-body">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+            <div>
+              <strong style="color: var(--text-main); font-size: 1.15rem; display: block; margin-bottom: 0.35rem;">Clinical Platforms & Analyzers</strong>
+              <p style="font-size: 1.05rem; margin: 0; color: var(--text-muted);">HORIBA ABX Micros, ACE Axcel (ISE module), Sebia SPEP, Siemens Clinitek Novus, Sysmex UF-5000, Advanced Instruments OsmoPRO, VITEK 2 Compact.</p>
+            </div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 1.15rem; display: block; margin-bottom: 0.35rem;">Methodologies & Assays</strong>
+              <p style="font-size: 1.05rem; margin: 0; color: var(--text-muted);">Werfen SPRCA, Ortho MTS Gel Cards, Kirby-Bauer susceptibility, 100-cell differentials, Gram/AFB staining, PCR genotyping.</p>
+            </div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 1.15rem; display: block; margin-bottom: 0.35rem;">Quality & Regulatory Standards</strong>
+              <p style="font-size: 1.05rem; margin: 0; color: var(--text-muted);">Westgard Multi-Rule QC, out-of-control run troubleshooting, CAP/CLIA/VA PALMS compliance, and aseptic technique.</p>
+            </div>
+            <div>
+              <strong style="color: var(--text-main); font-size: 1.15rem; display: block; margin-bottom: 0.35rem;">Computation & Data Tooling</strong>
+              <p style="font-size: 1.05rem; margin: 0; color: var(--text-muted);">Jamovi, IBM SPSS 21, Microsoft Excel, Git/GitHub, full-stack JavaScript (Node.js, Express, MongoDB).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research & Applied Analytics -->
+    <section id="research">
+      <h2>Research & Applied Analytics</h2>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Infectious Disease Clinic HIV Evaluation Unit — SAMMC</div>
+          <div class="card-meta">May 2014 — November 2014</div>
+        </div>
+        <div class="card-body">
+          Evaluated epidemiological co-infection surveillance data comparing single-site versus extragenital 3-site screening efficacy. Maintained longitudinal data integrity across a cohort of 600 HIV-positive patients and 4,000+ diagnostic test results. Cleaned and structured clinical databases, calculated Odds Ratios and statistical significance in IBM SPSS, and co-authored findings published in the <em>Medical Surveillance Monthly Report (MSMR)</em>:
+          <p style="margin-top: 0.65rem;">
+            <a href="Extragenital_Screening_Study.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-style: italic; font-weight: 500; display: inline-flex; align-items: center; gap: 0.35rem;">
+              "Evaluation of Extragenital Screening for Gonorrhea and Chlamydia in HIV-infected Active Duty Air Force Members" ↗
+            </a>
+          </p>
+        </div>
+        <div class="badges">
+          <span class="badge">IBM SPSS</span>
+          <span class="badge">Biostatistics</span>
+          <span class="badge">Epidemiological Modeling</span>
+          <span class="badge">Peer-Reviewed Publication</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">South Texas Center for Emerging Infectious Diseases — UT San Antonio</div>
+          <div class="card-meta">September 2013 — May 2014</div>
+        </div>
+        <div class="card-body">
+          Executed Polymerase Chain Reaction (PCR) protocols for DNA isolation and genotyping. Ran agarose gel electrophoresis, compounded chemical fixatives, and performed histological tissue processing, microtomy, and specialized staining of CNS specimens under sterile biosafety conditions.
+        </div>
+        <div class="badges">
+          <span class="badge">PCR Genotyping</span>
+          <span class="badge">Histological Staining</span>
+          <span class="badge">Microtomy</span>
+          <span class="badge">Tissue Processing</span>
+          <span class="badge">Sterile Technique</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section id="education">
+      <h2>Education & Credentials</h2>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">M.S. in Medical Laboratory Sciences — UT San Antonio</div>
+          <div class="card-meta">Expected August 2027</div>
+        </div>
+        <div class="card-body">
+          Concentration in advanced diagnostics, flow cytometric immunophenotyping, immunohematology, and laboratory management. Preparing for the ASCP Medical Laboratory Scientist (MLS) board certification examination.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Post-Baccalaureate Laboratory Sciences — UT San Antonio</div>
+          <div class="card-meta">August 2015 — August 2020</div>
+        </div>
+        <div class="card-body">
+          Completed 4 years of intensive upper-division laboratory sciences (including biochemistry, genetics, cellular biology, and physiology), building the scientific baseline and technical laboratory prerequisites for graduate clinical diagnostics.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Professional Certificate: Full Stack Development (MERN) — MIT xPRO</div>
+          <div class="card-meta">February 2022 — July 2022</div>
+        </div>
+        <div class="card-body">
+          Architecture of full-stack web applications and database systems using JavaScript, Node.js, Express, and MongoDB.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">B.S. in Public Health: Epidemiology & Disease Control — UT San Antonio</div>
+          <div class="card-meta">May 2015</div>
+        </div>
+        <div class="card-body">
+          Quantitative study of disease transmission, biostatistical analysis, public health surveillance methodologies, and community health interventions.
+        </div>
+      </div>
+    </section>
+
+    <!-- Affiliations & Memberships -->
+    <section id="affiliations">
+      <h2>Professional Affiliations</h2>
+
+      <div class="card">
+        <div class="card-body" style="font-size: 1.05rem; line-height: 1.8;">
+          <ul style="margin-left: 1.25rem;">
+            <li><strong>International Clinical Cytometry Society (ICCS)</strong> — Member (2026 — Present)</li>
+            <li><strong>American Society for Clinical Pathology (ASCP)</strong> — Member (2025 — Present)</li>
+            <li><strong>Texas Association for Clinical Laboratory Science (TACLS)</strong> — Member (2025 — Present)</li>
+            <li><strong>Big Brothers Big Sisters of South Texas</strong> — Youth Mentor (2008 — 2015)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing & Field Notes -->
+    <section id="notes">
+      <h2>Writing & Field Notes</h2>
+      <div class="carousel-track">
+        <!-- Pancreatic Tumour Breakthrough Card -->
+        <a href="https://www.youtube.com/shorts/D1v3kFSLlOc" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Scientists Eliminate Pancreatic Tumours</div>
+              <div class="card-meta">Notes & Analysis ↗</div>
+            </div>
+            <div class="card-body">
+              CNIO researchers demonstrate complete regression of pancreatic ductal adenocarcinoma in preclinical models using a multi-target strategy combining EGFR blockade, KRAS inhibition, and STAT3 degradation to circumvent acquired resistance.
+            </div>
+            <div class="badges">
+              <span class="badge">Science</span>
+              <span class="badge">Cancer</span>
+              <span class="badge">Treatment</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.medel.com/hearing-solutions/cochlear-implants?utm_source=www.good-news.io&utm_medium=newsletter&utm_campaign=world-s-first-fully-implanted-cochlear-implant-is-here" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">World’s First Fully Implanted Cochlear Implant Is Here</div>
+              <div class="card-meta">Notes & Analysis ↗</div>
+            </div>
+            <div class="card-body">
+              A cochlear implant is a hearing solution designed to help people with severe-to-profound hearing loss access sound. Unlike a hearing aid, which amplifies sound, a cochlear implant works by bypassing damage in the inner ear.
+            </div>
+            <div class="badges">
+              <span class="badge">Implant</span>
+              <span class="badge">Medical Devices</span>
+              <span class="badge">Hearing</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.acs.org/pressroom/headline-science/universal-flu-vaccine.html" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Engineering Broad Protection: The Hunt for a Universal Influenza Vaccine</div>
+              <div class="card-meta">Notes & Analysis ↗</div>
+            </div>
+            <div class="card-body">
+              Examining novel nanoparticle antigen presentations that bypass seasonal antigenic drift by targeting conserved viral stem epitopes rather than hypervariable head regions.
+            </div>
+            <div class="badges">
+              <span class="badge">Immunology</span>
+              <span class="badge">Vaccinology</span>
+              <span class="badge">Viral Evolution</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Field Epidemiology & Biosafety in Acute Filovirus Outbreaks</div>
+              <div class="card-meta">Field Notes ↗</div>
+            </div>
+            <div class="card-body">
+              A look at decentralized diagnostic containment, point-of-care RT-PCR workflows, and rapid epidemiological surveillance metrics during recurring hemorrhagic fever outbreaks in the DRC.
+            </div>
+            <div class="badges">
+              <span class="badge">Epidemiology</span>
+              <span class="badge">Outbreak Surveillance</span>
+              <span class="badge">Diagnostic Containment</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://pubmed.ncbi.nlm.nih.gov/39722614/" target="_blank" rel="noopener noreferrer" class="post-link carousel-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Cellular Biomarkers & Clinical Oncology: Deconstructing Diagnostic Targets</div>
+              <div class="card-meta">Literature Review ↗</div>
+            </div>
+            <div class="card-body">
+              Analytical breakdown of emerging therapeutic targets and cellular mechanisms evaluated in recent clinical oncology literature, focusing on biomarker assay sensitivity and clinical validation.
+            </div>
+            <div class="badges">
+              <span class="badge">Clinical Oncology</span>
+              <span class="badge">Biomarkers</span>
+              <span class="badge">Translational Research</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Daniel Rivera • Hosted on GitHub Pages
+    </footer>
+
+  </div>
+
+</body>
+</html>
